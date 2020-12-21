@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ödev</title>
+	<link href="https://fonts.googleapis.com/css2?family=Fondamento&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+<style>
+	body{
+		background-image:url("img1.jpg");
+		width:100%;
+		
+	}
+	#kutu1 {
+		position: absolute;
+		top: 100px;
+		left: 150px;
+		width: 100px;
+		height: 220px;
+		padding: 70px 30px;
+		background-color:lightblue;
+
+	}
+	#x {
+		position: absolute;
+		top: 10px;
+		left: 30px;
+	}
+	#byt {
+		position: absolute;
+		top: 50px;
+		left: 25px;
+	}
+	#metin {
+	position:absolute;
+	top:50px;
+	left:150px;
+	width:326px;
+	}
+	#a {
+	position:absolute;
+	top:15px;
+	left:260px;
+	color:white;
+	}
+	#kutu2 {
+		position: absolute;
+		top: 100px;
+		left: 320px;
+		width: 100px;
+		height: 220px;
+		padding: 70px 30px;
+		background-color:lightgreen;
+
+	}
+	#v {
+	position:absolute;
+	top:10px;
+	left:20px;
+	}
+	#bk {
+	position:absolute;
+	left:10px;
+	top:300px;
+	
+	}
+	#sonuc {
+	position:absolute;
+	top:500px;
+	left:150px;
+	width:326px;
+	height:100px;
+	border: #00897B 3px double;
+	}
+	#z {
+	position:absolute;
+	top:465px;
+	left:285px;
+	color:white;
+	}
+	#y {
+	position:absolute;
+	top:260px;
+	left:19px;
+	font-size:13px;
+	}
+	#ar{
+	position:absolute;
+	top:220px;
+	left:50px;
+	}
+	#l {
+	position:absolute;
+	font-size:17px;
+	left:25px;
+	top:172px;
+	}
+	#rb {
+	position:absolute;
+	left:50px;
+    }
+	
+	
+	
+	
+	
+</style>
+</head>
+<body>
+	<p id="a">METİN KUTUSU</p>
+	<textarea id="metin" onkeyup="metin()"></textarea>
+	<div id="kutu1">
+		<p>YAZI TİPİ</p>
+		<select id="yazı" class="yazilar" onchange="yazistili()">
+  			<option value="'Fondamento', cursive">Fondamento</option>
+  			<option value="'Modak', cursive">Modak</option>
+  			<option value="'Montserrat', sans-serif">Montserrat</option>
+  			<option value=" 'Bangers', cursive">Bangers</option>
+			<option value="'Galada', cursive">Galada</option>
+		</select>
+		<p id="x">YAZI BOYUTU</p>
+		<input type="range" id="byt" min="10" max="100" onmousemove="yaziboyutu()">
+		<p>YAZI RENGİ</p>
+		<input type="color" id="yr" onchange="yazirengi()">
+	</div>
+	<div id="kutu2">
+		<p id="v">BORDER STİLİ</p>
+		<select id="kalınlık" class="kalinlik" onchange="bstil()">
+  			<option value="dotted">Dotted</option>
+  			<option value="dashed">Dashed</option>
+  			<option value="solid">Solid</option>
+  			
+		</select>
+		<p id="y">BORDER KALINLIĞI</p>
+		<input type="range" id="bk" min="10" max="100" onmousemove="bkalınlık()">
+		<p>Border Rengi</p>
+		<input type="color" id="rb" onchange="brengi()">
+		<p id="l">Arka plan rengi</p>
+		<input type="color" id="ar" onchange="arkaplan()">
+	</div>
+	<p id="z">SONUÇ</p>
+	<textarea id="sonuc"></textarea>
+<script>
+	function metin(){
+		document.getElementById("sonuc").innerHTML="";
+		document.getElementById("sonuc").innerHTML+=
+		document.getElementById("metin").value;
+	}
+	function yazistili (){
+		document.getElementById("sonuc").style.fontFamily=document.getElementById("yazı").value;
+	}
+	function yaziboyutu(){
+		document.getElementById("sonuc").style.fontSize=document.getElementById("byt").value+"px";
+	}
+	function yazirengi(){
+		document.getElementById("sonuc").style.color=document.getElementById("yr").value;
+	}
+	function bstil(){
+		document.getElementById("sonuc").style.borderStyle=document.getElementById("kalınlık").value;
+	}
+	function arkaplan(){
+		document.getElementById("sonuc").style.backgroundColor=document.getElementById("ar").value;
+	}
+	function bkalınlık(){
+		document.getElementById("sonuc").style.borderWidth=document.getElementById("bk").value+"px";
+	}
+	function brengi(){
+		document.getElementById("sonuc").style.borderColor=document.getElementById("rb").value;
+	}
+</script>
+</body>
+</html>
